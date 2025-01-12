@@ -850,3 +850,19 @@ dishRouter.route('/:dishId/comments/:commentId')
 module.exports = dishRouter;
 ```
 
+```javaScript
+Student.findByIdAndUpdate(
+    req.params.studentId,
+    { $set: req.body },
+    { 
+        new: true,          
+        runValidators: true 
+    }
+)
+```
+1. Student id
+2. `{ $set: req.body }`: update only specific field value changes in `req.body`
+	to replace 
+	`req.body` instead of `{ $set: req.body}`.
+3. `new: true`: Show me the updated information
+4. `runValidators: true`: make sure the new information follows all our rules.
